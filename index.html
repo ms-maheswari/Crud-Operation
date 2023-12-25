@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- <script src="sweet.js"></script> -->
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+</head>
+<body>
+    <h1>Basic Crud Operation</h1>
+    
+    <div class="container">
+    <form id="form" method="post">
+        <h2>Registration Form</h2>
+        <div class="input-group">
+            <label for="name">Name :</label>
+        <input type="text" id="name"  onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Name">
+    </div>
+    <div class="input-group">
+        <label for="email">Email :</label>
+        <input type="text" id="email" placeholder="Email">    
+    </div>
+    <div class="input-group">
+        <label for="mobile" >Mobile :</label>
+        <input type="text" id="mobile" placeholder="Mobile no." maxlength="10">
+    </div>
+    <div class="input-group">
+        <label for="country">Country :</label>
+        <select name="country" id="country">
+            <option>Select</option>
+            <option>Australia</option>
+            <option>India</option>
+            <option>United Kingdom</option>
+            <option>France</option>
+             <option >America</option>
+             <option >Turkey</option>
+             <option >China</option>
+            <option >Afghanistan</option>
+        </select> 
+        </div>
+    <div class="input-group">
+        <label for="date">Date :</label>
+        <input type="date" id="date" placeholder="D.O.B">
+        <script>
+            var today=new Date().toISOString().split('T')[0];
+            document.getElementById("date").setAttribute("max",today);
+        </script>
+    </div>
+    <div class="input-group">
+        <label for="gender">Gender :</label>
+        <div class="box">
+            <label class="rbtn"><input type="radio" name="gender" id="male" value="male"> <span>Male</span></label>
+            <label class="rbtn"><input type="radio" name="gender" id="female" value="female"><span>Female</span> </label> 
+            <label class="rbtn"><input type="radio" name="gender" id="other" value="other"> <span>Other</span></label> 
+        </div>
+        </div>
+        <div class="input-group">
+            <label for="hobbies">Hobbies :</label>
+            <div class="box" >
+                <label class="check"><input type="checkbox" name="hobbies" id="sports" value="sports"><span>Sports</span></label>
+                <label class="check"><input type="checkbox" name="hobbies" id="movies" value="movies"><span>Movies</span></label>
+                <label class="check"><input type="checkbox" name="hobbies" id="music" value="music"><span>Music</span></label>  
+            </div>
+            </div>
+            <div class="input-group">
+                <label for="address">Address :</label>
+                <textarea name="address" id="address"></textarea> 
+                </div>
+                <div class="Submit-button">
+                    <button class="button" id="submitbtn" type="submit">Create</button>
+                    <button class="resetbtn" type="reset" id="reset" value="Reset" >Reset</button>
+                </div>
+            </form> 
+        </div>
+        <div class="list">
+            <table id="crudtable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Country</th>
+                        <th>Date</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </body>
+    
+</html>
